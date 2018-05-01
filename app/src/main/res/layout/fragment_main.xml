@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="3"
+    android:columnCount="3"
+    android:orientation="horizontal"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".MainActivity$PlaceholderFragment">
+
+    <LinearLayout
+        android:id="@+id/con1"
+        android:layout_marginTop="25dp"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ver"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/con2"
+        android:layout_marginTop="25dp"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+
+        android:id="@+id/con3"
+        android:layout_marginTop="25dp"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/con4"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/con5"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/con6"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/con7"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/con8"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/con9"
+        android:layout_height="160dp"
+        android:layout_width="120dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+            />
+
+
+
+    </LinearLayout>
+
+
+</GridLayout>
