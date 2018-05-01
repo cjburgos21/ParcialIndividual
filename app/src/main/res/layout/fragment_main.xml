@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
@@ -11,265 +11,283 @@
     android:background="@color/colorPrimaryDark"
     tools:context=".MainActivity$PlaceholderFragment">
 
-<SearchView
-    android:layout_width="26dp"
-    android:layout_height="26dp"
-    />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <SearchView
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
 
-    <LinearLayout
-        android:id="@+id/con1"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="3dp"
-        android:layout_width="120dp"
-        android:layout_height="160dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp">
+    </SearchView>
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2" />
-
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            android:onClick="muestra"
-            />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/con2"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="3dp"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="3"
         >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
+        <LinearLayout
+            android:id="@+id/con1"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="3dp"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2" />
 
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            android:onClick="muestra"
-            />
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                android:onClick="muestra"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/con2"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
 
 
-    </LinearLayout>
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                android:onClick="muestra"
+                />
 
 
-    <LinearLayout
-        android:id="@+id/con3"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="3dp"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            android:onClick="muestra"
-            />
+        </LinearLayout>
 
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/con3"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="3dp"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                android:onClick="muestra"
+                />
 
 
-
-    <LinearLayout
-        android:id="@+id/con4"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginBottom="3dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
-
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/con5"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
-
-
-    </LinearLayout>
+        </LinearLayout>
 
 
 
+        <LinearLayout
+            android:id="@+id/con4"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
 
-    <LinearLayout
-        android:id="@+id/con6"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
 
 
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
-    </LinearLayout>
-
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
 
 
 
-    <LinearLayout
-        android:id="@+id/con7"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
-
-    </LinearLayout>
+        </LinearLayout>
 
 
+        <LinearLayout
+            android:id="@+id/con5"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
 
-    <LinearLayout
-        android:id="@+id/con8"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
 
 
-    </LinearLayout>
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
+
+
+        </LinearLayout>
 
 
 
 
-    <LinearLayout
-        android:id="@+id/con9"
-        android:background="#FFFFFF"
-        android:orientation="vertical"
-        android:layout_height="160dp"
-        android:layout_width="120dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        >
+        <LinearLayout
+            android:id="@+id/con6"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:src="@drawable/perfil2"
-            />
-
-        <Button
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:text="ver"
-            />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
 
 
-
-    </LinearLayout>
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
+        </LinearLayout>
 
 
 
 
+        <LinearLayout
+            android:id="@+id/con7"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
 
-</GridLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:id="@+id/con8"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
+
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/con9"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:layout_height="160dp"
+            android:layout_width="120dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:src="@drawable/perfil2"
+                />
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="ver"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </GridLayout>
+
+
+
+
+
+</ScrollView>
+
+
+
+
+</LinearLayout>
