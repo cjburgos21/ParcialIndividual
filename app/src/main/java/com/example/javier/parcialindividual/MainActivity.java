@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText fecha = (EditText) view.findViewById(R.id.fecha);
-        fecha.setOnClickListener(this);
+        EditText fechas = (EditText) view.findViewById(R.id.fecha);
+        fechas.setOnClickListener(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

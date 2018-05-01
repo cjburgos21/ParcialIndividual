@@ -17,8 +17,10 @@ import java.util.Calendar;
 
 
 public class fragmento2 extends DialogFragment {
-    implements DatePickerDialog.OnDateSetListener{
 
+    public fragmento2(){
+
+    }
 
         private DatePickerDialog.OnDateSetListener listener;
 
@@ -28,6 +30,14 @@ public class fragmento2 extends DialogFragment {
             return fragmento;
 
         }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+
+            return inflater.inflate(R.layout.fragment_fragmento2, container, false);
+        }
+
+
 
         @Override
 
@@ -46,22 +56,25 @@ public class fragmento2 extends DialogFragment {
         }
 
 
-    }
 
     private void showDatePickerDialog() {
         fragmento2 newFragment = fragmento2.newInstance(new DatePickerDialog.OnDateSetListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+            public void onDateSet(DatePicker datePicker, int año, int mes, int dia) {
                 // +1 because january is zero
-                final String selectedDate = day + " / " + (month+1) + " / " + year;
-                etPlannedDate.setText(selectedDate);
+                final String selectedDate = dia + " / " + (mes+1) + " / " + año;
+                fechas.setText(selectedDate);
             }
         });
         newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
     }
 
 
+
     public void setListener(DatePickerDialog.OnDateSetListener listener) {
         this.listener = listener;
     }
+
 }
+
+
