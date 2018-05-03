@@ -39,35 +39,9 @@ public class fragmento2 extends DialogFragment {
 
 
 
-        @Override
-
-                public Dialog onCreateDialog(Bundle savedInstanceState){
-            final Calendar c = Calendar.getInstance();
-            int año = c.get(Calendar.YEAR);
-            int mes = c.get(Calendar.MONTH);
-            int dia = c.get(Calendar.DAY_OF_MONTH);
-
-            return new DatePickerDialog(getActivity(), this,año ,mes, dia);
-
-        }
-
-        public void onDateSet(DatePicker view, int año, int mes, int dia){
-
-        }
 
 
 
-    private void showDatePickerDialog() {
-        fragmento2 newFragment = fragmento2.newInstance(new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker datePicker, int año, int mes, int dia) {
-                // +1 because january is zero
-                final String selectedDate = dia + " / " + (mes+1) + " / " + año;
-                fechas.setText(selectedDate);
-            }
-        });
-        newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
-    }
 
 
 
