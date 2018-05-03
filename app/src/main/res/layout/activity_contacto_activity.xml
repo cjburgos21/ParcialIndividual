@@ -64,6 +64,7 @@
         android:orientation="horizontal">
 
         <ImageButton
+
             android:layout_marginLeft="70dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/comparte"
-            android:id="@+id/comparte_id"
+            android:id="@+id/compartid"
             />
 
 
