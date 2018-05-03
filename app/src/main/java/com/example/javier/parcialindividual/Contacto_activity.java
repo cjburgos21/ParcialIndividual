@@ -1,8 +1,11 @@
 package com.example.javier.parcialindividual;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,6 +13,7 @@ public class Contacto_activity extends AppCompatActivity {
 
     private TextView tvnombre, tvtelef,tvcorreo;
     private ImageView imfoto;
+    private ImageButton boton_llamar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +24,14 @@ public class Contacto_activity extends AppCompatActivity {
         tvtelef = (TextView) findViewById(R.id.contac_telef);
         tvcorreo = (TextView) findViewById(R.id.contac_correo);
         imfoto = (ImageView) findViewById(R.id.contact_img);
+        boton_llamar = (ImageButton) findViewById(R.id.llama_id);
 
 
         //Recibiendo informacion
 
         Intent intenta = getIntent();
         String Nombre = intenta.getExtras().getString("Nombre");
-        String Telefono = intenta.getExtras().getString("Telefono");
+        final String Telefono = intenta.getExtras().getString("Telefono");
         String Correo = intenta.getExtras().getString("Correo");
         int foto = intenta.getExtras().getInt("Foto");
 
@@ -36,5 +41,15 @@ public class Contacto_activity extends AppCompatActivity {
         tvtelef.setText(Telefono);
         tvcorreo.setText(Correo);
         imfoto.setImageResource(foto);
+
+        boton_llamar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent llamar = new Intent(Intent.ACTION_CALL);
+                llamar.setData(Uri.parse("tel:"+Telefono));
+                v.getContext().startActivity(llamar);
+            }
+        });
+
     }
 }

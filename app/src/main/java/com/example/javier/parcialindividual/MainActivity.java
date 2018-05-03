@@ -1,5 +1,7 @@
 package com.example.javier.parcialindividual;
 
+import android.database.Cursor;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -35,10 +37,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         contact = new ArrayList<>();
-        contact.add(new Contacto("Carlos Burgos", "70143865","cjburgos12@hotmail.com",R.drawable.perfil2));
-        contact.add(new Contacto("Javier Martinez", "74149036","crls@hotmail.com",R.drawable.perfil2));
-        contact.add(new Contacto("Roberto Cuestas", "76521922","rcuestas9@hotmail.com",R.drawable.perfil2));
-        contact.add(new Contacto("Gerardo Alvarado", "77693452","galvarado1@hotmail.com",R.drawable.perfil2));
+
+        String[] projeccion = new String[] { ContactsContract.Data._ID, ContactsContract.Data.DISPLAY_NAME,
+                ContactsContract.CommonDataKinds.Phone.NUMBER, ContactsContract.CommonDataKinds.Phone.TYPE };
+
+        String selectionClause = ContactsContract.Data.MIMETYPE + "='" +
+                ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE + "' AND "
+                + ContactsContract.CommonDataKinds.Phone.NUMBER + " IS NOT NULL";
+
+        String sortOrder = ContactsContract.Data.DISPLAY_NAME + " ASC";
+
+        Cursor c = getContentResolver().query(
+                ContactsContract.Data.CONTENT_URI,
+                projeccion,
+                selectionClause,
+                null,
+                sortOrder);
+
+        while(c.moveToNext()){
+            contact.add(new Contacto(c.getString(1),c.getString(2),"000000@uca.edu.sv",R.drawable.perfil2));
+        }
+        c.close();
 
 
         RecyclerView rcyv = (RecyclerView) findViewById(R.id.recycler1);

@@ -1,13 +1,18 @@
 package com.example.javier.parcialindividual;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +22,6 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
     private Context context1;
     private List<Contacto> data;
-
 
     public adaptador(Context context1, List<Contacto> data) {
         this.context1 = context1;
@@ -40,6 +44,7 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
         holder.txt_nom.setText(data.get(position).getNombre());
         holder.img.setImageResource(data.get(position).getFoto());
         holder.bot.setImageResource(data.get(position).getFoto());
+
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,7 +63,7 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
             }
         });
 
-                //Seteando click Listener
+        //Seteando click Listener
 
 
     }
@@ -74,7 +79,6 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
         ImageView img;
         ImageView bot;
         CardView cardView;
-
 
         public MyViewHolder(View itemView) {
             super(itemView);
