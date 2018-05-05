@@ -43,8 +43,6 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
         holder.txt_nom.setText(data.get(position).getNombre());
         holder.img.setImageResource(data.get(position).getFoto());
-        holder.bot.setImageResource(data.get(position).getFoto());
-
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,7 +83,6 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
             txt_nom = (TextView) itemView.findViewById(R.id.txt1);
             img = (ImageView)  itemView.findViewById(R.id.img1);
-            bot = (ImageView) itemView.findViewById(R.id.img2);
             cardView = (CardView) itemView.findViewById(R.id.cardv_id);
         }
     }

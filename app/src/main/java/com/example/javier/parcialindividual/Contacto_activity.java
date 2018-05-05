@@ -14,6 +14,7 @@ public class Contacto_activity extends AppCompatActivity {
     private TextView tvnombre, tvtelef,tvcorreo;
     private ImageView imfoto;
     private ImageButton boton_llamar;
+    private ImageButton boton_comparte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,8 @@ public class Contacto_activity extends AppCompatActivity {
         tvcorreo = (TextView) findViewById(R.id.contac_correo);
         imfoto = (ImageView) findViewById(R.id.contact_img);
         boton_llamar = (ImageButton) findViewById(R.id.llama_id);
+        boton_comparte = (ImageButton) findViewById(R.id.compartid);
+
 
 
         //Recibiendo informacion
@@ -50,6 +53,16 @@ public class Contacto_activity extends AppCompatActivity {
                 v.getContext().startActivity(llamar);
             }
         });
+
+        /*
+        boton_comparte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+        */
 
     }
 }
