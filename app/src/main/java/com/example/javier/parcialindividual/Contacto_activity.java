@@ -33,9 +33,9 @@ public class Contacto_activity extends AppCompatActivity {
         //Recibiendo informacion
 
         Intent intenta = getIntent();
-        String Nombre = intenta.getExtras().getString("Nombre");
+        final String Nombre = intenta.getExtras().getString("Nombre");
         final String Telefono = intenta.getExtras().getString("Telefono");
-        String Correo = intenta.getExtras().getString("Correo");
+        final String Correo = intenta.getExtras().getString("Correo");
         int foto = intenta.getExtras().getInt("Foto");
 
         //Seteando valores
@@ -54,15 +54,19 @@ public class Contacto_activity extends AppCompatActivity {
             }
         });
 
-        /*
+
+
         boton_comparte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                Intent compartir = new Intent(Intent.ACTION_SEND);
+                compartir = new Intent(Intent.ACTION_SEND);
+                compartir.putExtra(Intent.EXTRA_TEXT,"Nombre: "+Nombre+"Telefono:"+Telefono +"Correo:"+Correo);
+                compartir.setType("text/plain");
+                v.getContext().startActivity(Intent.createChooser(compartir,"Compartir informacion de contacto"));
             }
         });
-        */
+
 
     }
 }

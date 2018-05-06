@@ -5,11 +5,11 @@
     android:id="@+id/cardv_id"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:layout_width="120dp"
+    android:layout_width="match_parent"
     android:layout_height="190dp"
-    android:layout_margin="5dp"
+    android:layout_marginTop="50dp"
+    android:layout_margin="20dp"
     android:layout_weight="2"
-    android:padding="4dp"
     cardview:cornerradius="4dp">
 
 
@@ -32,9 +32,10 @@
         <TextView
             android:background="#0080FF"
             android:id="@+id/txt1"
-            android:layout_width="wrap_content"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
+            android:textSize="12sp"
             android:layout_gravity="center"
             />
 

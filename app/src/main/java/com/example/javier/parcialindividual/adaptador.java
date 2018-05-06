@@ -71,6 +71,13 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
         return data.size();
     }
 
+    public void filterList(List<Contacto> filteredList) {
+        data = filteredList;
+        notifyDataSetChanged();
+    }
+
+
+
     public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         TextView txt_nom;

@@ -1,5 +1,6 @@
 package com.example.javier.parcialindividual;
 
+import android.content.ContentUris;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -13,6 +14,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.Toolbar;
 
 import android.support.v4.app.Fragment;
@@ -20,6 +22,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,15 +36,20 @@ import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     List<Contacto> contact;
+    List<Contacto> FilteredList;
     String nombres, tel, correoe;
     TextView nombre1,telefono,correo1;
     ImageView imagen1;
+    private String contactID;
+    adaptador adapta;
 
 
 
@@ -74,14 +83,79 @@ public class MainActivity extends AppCompatActivity {
         }
         c.close();
 
-
         RecyclerView rcyv = (RecyclerView) findViewById(R.id.recycler1);
-        adaptador adapta = new adaptador(this,contact);
-        rcyv.setLayoutManager(new GridLayoutManager(this,3));
+        adapta = new adaptador(this,contact);
+        rcyv.setLayoutManager(new GridLayoutManager(this,2));
         rcyv.setAdapter(adapta);
 
+        /*
+        EditText buscador = (EditText) findViewById(R.id.buscar);
+        buscador.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
+        */
+
     }
+
     /*
+    private void filter(String text) {
+        ArrayList<Contacto> filteredList = new ArrayList<>();
+
+        for (Contacto item : contact) {
+            if (item.getNombre().toLowerCase().contains(text.toLowerCase())) {
+                filteredList.add(item);
+            }
+        }
+
+        adapta.filterList(filteredList);
+    }
+    */
+
+
+    //Importando imagenes de contacto
+    private void retrieveContactPhoto() {
+
+        Bitmap photo = null;
+
+        try {
+            InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(getContentResolver(),
+
+                    ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, Long.valueOf(contactID)));
+
+
+            //Seteando Foto importada de telefono en ImageView
+            if (inputStream != null) {
+                photo = BitmapFactory.decodeStream(inputStream);
+                ImageView imageView = (ImageView) findViewById(R.id.img1);
+                imageView.setImageBitmap(photo);
+            }
+
+            assert inputStream != null;
+            inputStream.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+//CREANDO CLASE COMPARTIR
+
+
     public void compartir(View view) {
         Bitmap bitmap1 = vista(imagen1);
         nombre1 = (TextView) findViewById(R.id.contac_nom);
@@ -90,11 +164,11 @@ public class MainActivity extends AppCompatActivity {
         tel = telefono.getText().toString();
         correo1 = (TextView) findViewById(R.id.contac_correo);
         correoe = correo1.getText().toString();
-    */
 
 
-        /*Declarando Intent*/
-        /*
+
+        //Declarando intent
+
         try {
             File file = new File(this.getExternalCacheDir(), "apoyo.png");
             FileOutputStream fuera = new FileOutputStream(file);
@@ -106,10 +180,10 @@ public class MainActivity extends AppCompatActivity {
             comparte.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             comparte.setType("");
             comparte.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
-            comparte.putExtra(Intent.EXTRA_TEXT, "Nombre:" + nombres + "\n" + tel + "\n" + correoe);*/
+            comparte.putExtra(Intent.EXTRA_TEXT, "Nombre:" + nombres + "\n" + tel + "\n" + correoe);
             /*Permite escoger la app para recibir la informacion*/
 
-            /*startActivity(Intent.createChooser(comparte,"Que programa desea utilizar?"));
+            startActivity(Intent.createChooser(comparte,"Que programa desea utilizar?"));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -117,10 +191,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
-    */
 
-    /*Generador de imagen*/
-    /*
+
+    //Generador de imagen
+
     private Bitmap vista(View view){
         Bitmap retorna = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas1 = new Canvas(retorna);
@@ -136,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
         return retorna;
     }
 
-    /*Creando Boton para Favoritos*/
 
 }
 
