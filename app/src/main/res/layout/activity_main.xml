@@ -8,12 +8,6 @@
     android:orientation="horizontal"
     tools:context="com.example.javier.parcialindividual.MainActivity">
 
-    <!--
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buscar"/>
-    -->
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler1"

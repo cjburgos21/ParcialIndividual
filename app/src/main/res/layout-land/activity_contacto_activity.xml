@@ -9,10 +9,11 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="335dp"
+        android:scrollbars="vertical"
+        android:layout_weight="1"
+        android:layout_height="0dp"
         android:layout_marginTop="10dp"
         android:padding="10dp">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +34,7 @@
                 android:id="@+id/contac_nom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_marginTop="20dp"
                 android:text="Nombre"
                 android:textSize="@dimen/text_sizedef" />
@@ -41,7 +42,7 @@
             <TextView
                 android:id="@+id/contac_telef"
                 android:layout_width="wrap_content"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Telefono"
@@ -53,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="Correo"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:textSize="@dimen/text_sizedef" />
 
 
@@ -63,13 +64,13 @@
 
 
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
 
         <ImageButton
+            android:layout_weight="1"
             android:layout_marginLeft="70dp"
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -78,9 +79,10 @@
             />
 
         <ImageButton
+            android:layout_weight="3"
             android:layout_marginRight="55dp"
             android:layout_marginLeft="100dp"
-            android:layout_width="0dp"
+            android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/comparte2"
             android:id="@+id/compartid"
@@ -89,10 +91,7 @@
 
     </LinearLayout>
     
-    
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+
 
 
 

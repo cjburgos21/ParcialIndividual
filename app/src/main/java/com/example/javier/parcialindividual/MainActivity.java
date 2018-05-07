@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         rcyv.setLayoutManager(new GridLayoutManager(this,2));
         rcyv.setAdapter(adapta);
 
-        /*
+
         EditText buscador = (EditText) findViewById(R.id.buscar);
         buscador.addTextChangedListener(new TextWatcher() {
 
@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity {
                 filter(s.toString());
             }
         });
-        */
+
 
     }
 
-    /*
+
     private void filter(String text) {
         ArrayList<Contacto> filteredList = new ArrayList<>();
 
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapta.filterList(filteredList);
     }
-    */
+    
 
 
     //Importando imagenes de contacto
