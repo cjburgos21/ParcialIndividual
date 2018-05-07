@@ -43,13 +43,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    List<Contacto> contact;
+    public static List<Contacto> contact;
     List<Contacto> FilteredList;
     String nombres, tel, correoe;
     TextView nombre1,telefono,correo1;
     ImageView imagen1;
     private String contactID;
     adaptador adapta;
+    FloatingActionButton fab;
 
 
 
@@ -58,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imagen1 = (ImageView) findViewById(R.id.contact_img);
+        fab = (FloatingActionButton) findViewById(R.id.fab1);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Intent in = new Intent(getApplicationContext(),fragmento2.class);
+              startActivity(in);
+            }
+        });
 
 
         contact = new ArrayList<>();
@@ -123,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapta.filterList(filteredList);
     }
-    
+
 
 
     //Importando imagenes de contacto

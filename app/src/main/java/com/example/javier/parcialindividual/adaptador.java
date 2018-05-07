@@ -21,7 +21,7 @@ import java.util.List;
 public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
     private Context context1;
-    private List<Contacto> data;
+    public static List<Contacto> data;
 
     public adaptador(Context context1, List<Contacto> data) {
         this.context1 = context1;

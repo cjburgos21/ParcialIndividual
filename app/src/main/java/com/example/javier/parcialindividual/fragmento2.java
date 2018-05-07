@@ -7,47 +7,46 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import java.util.Calendar;
 
 
-public class fragmento2 extends DialogFragment {
+public class fragmento2 extends AppCompatActivity {
 
-    public fragmento2(){
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_fragmento2);
+
+        EditText Nombre = findViewById(R.id.agregar_nombre);
+        EditText Telefono = findViewById(R.id.agregar_telefono);
+        EditText Correo = findViewById(R.id.agregar_correo);
+        ImageView Foto = findViewById(R.id.agregar_imagen);
+        Button guardar = findViewById(R.id.guarda);
+
+        final String NombreExtraido = Nombre.getText().toString();
+        final String TelefonoExtraido = Telefono.getText().toString();
+        final String CorreoExtraido = Correo.getText().toString();
+
+
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adaptador.data.add(new Contacto(NombreExtraido,TelefonoExtraido,CorreoExtraido,R.drawable.perfil2));
+            }
+        });
 
     }
 
-        private DatePickerDialog.OnDateSetListener listener;
-
-        public static fragmento2 newInstance(DatePickerDialog.OnDateSetListener listener){
-            fragmento2 fragmento  = new fragmento2();
-            fragmento.setListener(listener);
-            return fragmento;
-
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
-            return inflater.inflate(R.layout.fragment_fragmento2, container, false);
-        }
-
-
-
-
-
-
-
-
-
-    public void setListener(DatePickerDialog.OnDateSetListener listener) {
-        this.listener = listener;
-    }
 
 }
 
