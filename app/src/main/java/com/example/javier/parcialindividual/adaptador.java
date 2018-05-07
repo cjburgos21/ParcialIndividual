@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -84,13 +85,16 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
         ImageView img;
         ImageView bot;
         CardView cardView;
+        EditText NombreExtraido;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            NombreExtraido = (EditText) itemView.findViewById(R.id.agregar_nombre);
             txt_nom = (TextView) itemView.findViewById(R.id.txt1);
             img = (ImageView)  itemView.findViewById(R.id.img1);
             cardView = (CardView) itemView.findViewById(R.id.cardv_id);
         }
     }
+
+
 }
