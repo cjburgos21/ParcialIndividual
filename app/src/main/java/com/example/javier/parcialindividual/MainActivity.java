@@ -42,7 +42,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
     public static List<Contacto> contact;
     List<Contacto> FilteredList;
     String nombres, tel, correoe;
@@ -59,17 +58,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imagen1 = (ImageView) findViewById(R.id.contact_img);
-        fab = (FloatingActionButton) findViewById(R.id.fab1);
 
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              Intent in = new Intent(getApplicationContext(),fragmento2.class);
-              startActivity(in);
-            }
-        });
 
         //Importando contactos de telefono
+        if(contact == null){
         contact = new ArrayList<>();
 
         String[] pro = new String[] { ContactsContract.Data._ID, ContactsContract.Data.DISPLAY_NAME,
@@ -87,12 +79,30 @@ public class MainActivity extends AppCompatActivity {
                 selectionClause,
                 null,
                 sortOrder);
+
+
+        contact = new ArrayList<Contacto>();
         //Seteando valores para vista de perfil de contacto
 
         while(c.moveToNext()){
             contact.add(new Contacto(c.getString(1),c.getString(2),"000000@uca.edu.sv",R.drawable.perfil2));
         }
         c.close();
+        }
+        else{
+            agregar();
+        }
+        fab = (FloatingActionButton) findViewById(R.id.fab1);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(getApplicationContext(),fragmento2.class);
+                startActivity(in);
+            }
+        });
+
+
+
 
         RecyclerView rcyv = (RecyclerView) findViewById(R.id.recycler1);
         adapta = new adaptador(this,contact);
@@ -121,6 +131,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void agregar(){
+        Intent intento = getIntent();
+        String nombre = intento.getExtras().getString("Nombreingresado");
+        String telefono = intento.getExtras().getString("Telefonoingresado");
+        String correo = intento.getExtras().getString("Correoingresado");
+        int imagen = intento.getExtras().getInt("Imageningresada");
+        Contacto contacta = new Contacto(nombre,telefono,correo,imagen);
+        contact.add(contacta);
     }
 
 
@@ -165,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//CREANDO CLASE COMPARTIR
+    //CREANDO Metodo COMPARTIR
 
 
     public void compartir(View view) {
@@ -223,15 +243,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    //Clase para agregar contacto
-    public void addContact(String Nombre, String Telefono, String Correo){
-        contact.add(new Contacto(Nombre,Telefono,Correo,R.drawable.perfil2));
-        RecyclerView rcyv = (RecyclerView) findViewById(R.id.recycler1);
-        adapta = new adaptador(this,contact);
-        rcyv.setLayoutManager(new GridLayoutManager(this,2));
-        rcyv.setAdapter(adapta);
 
-    }
 
     }
 

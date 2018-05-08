@@ -16,6 +16,13 @@ public class Contacto_activity extends AppCompatActivity {
     private ImageButton boton_llamar;
     private ImageButton boton_comparte;
 
+    /**En esta activity se setean los valores a cada una de las vistas, por medio de un intent se recibe la informaicon del contacto y se generan los listener;
+     * para cada imagebutton tanto para realizar llamadas, como para compartir el contenido del contacto.
+     *
+     * @param savedInstanceState
+     */
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

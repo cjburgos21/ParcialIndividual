@@ -3,6 +3,7 @@ package com.example.javier.parcialindividual;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -23,9 +24,12 @@ import java.util.Calendar;
 
 
 public class fragmento2 extends AppCompatActivity {
-
+    EditText NombreExtra;
+    EditText TelefonoExtra;
+    EditText CorreoExtra;
+    Button BotonAgregar;
+    String NombreExtraido, TelefonoExtraido, CorreoExtraido;
     adaptador adapta;
-    Context addContact;
     MainActivity auxiliar;
 
     //Clase para agregar contacto
@@ -35,20 +39,28 @@ public class fragmento2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_fragmento2);
 
-        EditText Nombre = findViewById(R.id.agregar_nombre);
-        EditText Telefono = findViewById(R.id.agregar_telefono);
-        EditText Correo = findViewById(R.id.agregar_correo);
-        //ImageView Foto = findViewById(R.id.agregar_imagen);
-        Button guardar = findViewById(R.id.guarda);
+        NombreExtra  = (EditText) findViewById(R.id.agregar_nombre);
+        TelefonoExtra  = (EditText) findViewById(R.id.agregar_telefono);
+        CorreoExtra = (EditText) findViewById(R.id.agregar_correo);
+        BotonAgregar = (Button) findViewById(R.id.guarda);
 
-        final String NombreExtraido = Nombre.getText().toString();
-        final String TelefonoExtraido = Telefono.getText().toString();
-        final String CorreoExtraido = Correo.getText().toString();
 
-        guardar.setOnClickListener(new View.OnClickListener() {
+                BotonAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                auxiliar.addContact(NombreExtraido,TelefonoExtraido,CorreoExtraido);
+                Context contexto = getApplicationContext();
+                NombreExtraido = NombreExtra.getText().toString();
+                TelefonoExtraido = TelefonoExtra.getText().toString();
+                CorreoExtraido = CorreoExtra.getText().toString();
+                Intent intentemos = new Intent(contexto, MainActivity.class);
+                intentemos.putExtra("Nombreingresado", NombreExtraido);
+                intentemos.putExtra("Telefonoingresado", TelefonoExtraido);
+                intentemos.putExtra("Correoingresado", CorreoExtraido);
+                intentemos.putExtra("Imageningresada",R.drawable.perfil2);
+                startActivity(intentemos);
+
+
+
             }
         });
 

@@ -19,6 +19,15 @@ import android.widget.TextView;
 
 import java.util.List;
 
+
+/** Se crean metodos para setear informacion en cardviews
+ * @author aws1994
+ *
+ *
+ *
+ */
+
+
 public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
     private Context context1;
@@ -29,6 +38,7 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
         this.data = data;
     }
 
+    //Seteando informacion a cada uno de los cardview
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
