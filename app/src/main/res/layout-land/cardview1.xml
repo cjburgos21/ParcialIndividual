@@ -25,12 +25,13 @@
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
-            android:background="#848484"
+            android:background="#2E9AFE"
             />
 
 
         <TextView
-            android:background="#0080FF"
+            android:background="#000000"
+            android:textColor="#FFFFFF"
             android:id="@+id/txt1"
             android:paddingLeft="10dp"
             android:layout_width="match_parent"
