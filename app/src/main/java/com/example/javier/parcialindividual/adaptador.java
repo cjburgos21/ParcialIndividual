@@ -83,9 +83,10 @@ public class adaptador extends RecyclerView.Adapter<adaptador.MyViewHolder>{
 
         TextView txt_nom;
         ImageView img;
-        ImageView bot;
         CardView cardView;
         EditText NombreExtraido;
+
+
 
         public MyViewHolder(View itemView) {
             super(itemView);

@@ -9,18 +9,18 @@
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:scrollbars="vertical"
-        android:layout_weight="1"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:scrollbars="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:scrollbars="vertical"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:scrollbars="vertical">
 
             <ImageView
                 android:id="@+id/contact_img"
@@ -34,17 +34,17 @@
                 android:id="@+id/contac_nom"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:text="Nombre"
                 android:textSize="@dimen/text_sizedef" />
 
             <TextView
                 android:id="@+id/contac_telef"
                 android:layout_width="wrap_content"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_weight="1"
                 android:text="Telefono"
                 android:textSize="@dimen/text_sizedef" />
 
@@ -53,45 +53,33 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Correo"
                 android:layout_weight="1"
+                android:text="Correo"
                 android:textSize="@dimen/text_sizedef" />
 
+
+                <ImageButton
+                    android:id="@+id/llama_id"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_margin="50dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/llamar" />
+
+                <ImageButton
+                    android:id="@+id/compartid"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="3"
+                    android:src="@drawable/comparte2" />
 
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_weight="1"
-            android:layout_marginLeft="70dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/llamar"
-            android:id="@+id/llama_id"
-            />
-
-        <ImageButton
-            android:layout_weight="3"
-            android:layout_marginRight="55dp"
-            android:layout_marginLeft="100dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:src="@drawable/comparte2"
-            android:id="@+id/compartid"
-            />
-
-
-    </LinearLayout>
-    
-
 
 
 

@@ -26,7 +26,9 @@ public class fragmento2 extends AppCompatActivity {
 
     adaptador adapta;
     Context addContact;
+    MainActivity auxiliar;
 
+    //Clase para agregar contacto
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +38,20 @@ public class fragmento2 extends AppCompatActivity {
         EditText Nombre = findViewById(R.id.agregar_nombre);
         EditText Telefono = findViewById(R.id.agregar_telefono);
         EditText Correo = findViewById(R.id.agregar_correo);
-        ImageView Foto = findViewById(R.id.agregar_imagen);
+        //ImageView Foto = findViewById(R.id.agregar_imagen);
         Button guardar = findViewById(R.id.guarda);
 
         final String NombreExtraido = Nombre.getText().toString();
         final String TelefonoExtraido = Telefono.getText().toString();
         final String CorreoExtraido = Correo.getText().toString();
 
-        adapta = new adaptador(this,MainActivity.contact);
-
-        /*
         guardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            MainActivity.contact.add(new Contacto(NombreExtraido,TelefonoExtraido,CorreoExtraido,R.drawable.perfil2));
-            adaptador.data.add(new Contacto(NombreExtraido,TelefonoExtraido,CorreoExtraido,R.drawable.perfil2));
-            adapta.addingcontact();
+                auxiliar.addContact(NombreExtraido,TelefonoExtraido,CorreoExtraido);
             }
         });
-        */
+
     }
 
 

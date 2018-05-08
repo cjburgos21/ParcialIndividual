@@ -45,6 +45,7 @@ public class Contacto_activity extends AppCompatActivity {
         tvcorreo.setText(Correo);
         imfoto.setImageResource(foto);
 
+        //Listener para boton de llamadas
         boton_llamar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,7 +56,7 @@ public class Contacto_activity extends AppCompatActivity {
         });
 
 
-
+        //Listener para boton compartir
         boton_comparte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

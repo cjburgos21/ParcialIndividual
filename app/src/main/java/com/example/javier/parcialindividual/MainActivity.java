@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        //Importando contactos de telefono
         contact = new ArrayList<>();
 
         String[] pro = new String[] { ContactsContract.Data._ID, ContactsContract.Data.DISPLAY_NAME,
@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 selectionClause,
                 null,
                 sortOrder);
+        //Seteando valores para vista de perfil de contacto
 
         while(c.moveToNext()){
             contact.add(new Contacto(c.getString(1),c.getString(2),"000000@uca.edu.sv",R.drawable.perfil2));
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         rcyv.setAdapter(adapta);
 
 
+        //Creando barra de busqueda
         EditText buscador = (EditText) findViewById(R.id.buscar);
         buscador.addTextChangedListener(new TextWatcher() {
 
@@ -205,14 +207,14 @@ public class MainActivity extends AppCompatActivity {
 
     //Generador de imagen
 
-    private Bitmap vista(View view){
+    private Bitmap vista(View view) {
         Bitmap retorna = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas1 = new Canvas(retorna);
         Drawable imag = view.getBackground();
 
-        if(imag !=null){
+        if (imag != null) {
             imag.draw(canvas1);
-        }else{
+        } else {
             canvas1.drawColor(Color.WHITE);
 
         }
@@ -221,7 +223,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-}
+    //Clase para agregar contacto
+    public void addContact(String Nombre, String Telefono, String Correo){
+        contact.add(new Contacto(Nombre,Telefono,Correo,R.drawable.perfil2));
+        RecyclerView rcyv = (RecyclerView) findViewById(R.id.recycler1);
+        adapta = new adaptador(this,contact);
+        rcyv.setLayoutManager(new GridLayoutManager(this,2));
+        rcyv.setAdapter(adapta);
+
+    }
+
+    }
+
+
 
 
 

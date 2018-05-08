@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:fitsSystemWindows="true"
     tools:context="com.example.javier.parcialindividual.MainActivity">
 
 
@@ -20,16 +21,15 @@
         android:id="@+id/buscar"/>
 
 
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/agregar"
-            android:layout_margin="16dp"
-            android:layout_gravity="end|bottom"
-            app:fabSize="normal"
-            android:id="@+id/fab1"
 
-
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/agregar"
+        android:layout_margin="16dp"
+        android:layout_gravity="end|bottom"
+        app:fabSize="normal"
+        android:id="@+id/fab1"
         />
 
 
